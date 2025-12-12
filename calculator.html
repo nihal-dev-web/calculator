@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="calculator">
+        <h1>Calculator</h1>
+        <input type="text" id="expression" placeholder="0" autofocus autocomplete="off">
+        
+        <input type="text" id="ans" value="0" readonly>
+        <div class="buttons">
+            
+            <button id="allclear">AC</button>
+            <button id="opn_braket">(</button>
+            <button id="cls_braket">)</button>
+            <button class="operator" id="Modulo">%</button>
+            <button id="seven">7</button>
+            <button id="eight">8</button>
+            <button id="nine">9</button>
+            <button class="operator" id="Add">+</button>
+
+            <button id="four">4</button>
+            <button id="five">5</button>
+            <button id="six">6</button>
+            <button class="operator" id="Subtraction">-</button>
+
+            <button id="one">1</button>
+            <button id="two">2</button>
+            <button id="three">3</button>
+            <button class="operator" id="Multiplication">*</button>
+
+            <button id="zero">0</button>
+            <button id="dot">.</button>
+            <button class="operator" id="equal">=</button>
+            <button class="operator" id="Division">/</button>
+            <button id="mode-toggle" class="toggle-btn">🌙 Dark Mode</button>
+            <button id="history-btn" class="toggle-btn">📜 History</button>
+            
+
+        </div>
+        <div class="history-container">
+            <h2>📜 History</h2>
+            <div class="history-list">
+                
+            </div>
+            <button id="clear-history-btn">Clear History</button>
+    
+        </div>
+    
+    </div>
+
+    <script src="calc_backend.js"></script>
+    <!-- <script> -->
+       
+        <!-- // function calculate(operator) {
+        //     var expression = document.getElementById("expression").value || 0;
+        //     // var n2 = parseFloat(document.getElementById("number2").value) || 1;
+        //     switch (operator) {
+        //         case "+": 
+        //         case "-": ans.value = n1 - n2; break;
+        //         case "*": ans.value = n1 * n2; break;
+        //         case "/": ans.value = n2 !== 0 ? n1 / n2 : "Error"; break;
+        //     }
+        // } -->
+        
+    <!-- // </script> -->
+
+</body>
+</html>
