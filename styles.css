@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --bg-color-dark: #1e1e1e;
+    --calculator-bg-dark: #2d2d2d;
+    --btn-bg-dark: #3a3a3a;
+    --btn-hover-dark: #505050;
+    --text-color-dark: white;
+
+    --bg-color-light: #f4f4f4;
+    --calculator-bg-light: white;
+    --btn-bg-light: #e0e0e0;
+    --btn-hover-light: #d4d4d4;
+    --text-color-light: black;
+}
+
+/* Default Dark Mode */
+body {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--bg-color-dark);
+    margin: 0;
+    transition: background 0.3s ease-in-out;
+}
+
+.calculator {
+    background: var(--calculator-bg-dark);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 322px;
+    transition: background 0.3s ease-in-out;
+}
+
+h1 {
+    margin: 0 0 10px;
+    color: var(--text-color-dark);
+    font-size: 22px;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+input {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 15px;
+    text-align: right;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    background: var(--btn-bg-dark);
+    box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.2);
+    outline: none;
+    color: var(--text-color-dark);
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+button {
+    height: 55px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: var(--btn-bg-dark);
+    color: var(--text-color-dark);
+    transition: all 0.2s ease-in-out;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: var(--btn-hover-dark);
+    transform: scale(1.05);
+}
+
+.operator {
+    background: #ff9500;
+}
+
+.operator:hover {
+    background: #e68400;
+}
+
+/* #equal {
+    background: #28a745;
+    color: white;
+    font-weight: bold;
+    grid-column: span 2;
+}
+
+#equal:hover {
+    background: #218838;
+} */
+
+#clear {
+    background: #dc3545;
+    color: white;
+    font-weight: bold;
+}
+
+#clear:hover {
+    background: #c82333;
+}
+
+button:active {
+    transform: scale(0.98);
+    box-shadow: none;
+}
+
+/* Light Mode */
+.light-mode {
+    background: var(--bg-color-light);
+}
+
+.light-mode .calculator {
+    background: var(--calculator-bg-light);
+}
+
+.light-mode h1,
+.light-mode input,
+.light-mode button {
+    color: var(--text-color-light);
+}
+
+.light-mode input {
+    background: var(--btn-bg-light);
+}
+
+.light-mode button {
+    background: var(--btn-bg-light);
+}
+
+.light-mode button:hover {
+    background: var(--btn-hover-light);
+}
+
+/* Light/Dark Mode Toggle */
+#mode-toggle {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+    grid-column: span 2;
+}
+
+#mode-toggle:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .calculator {
+        width: 280px;
+        padding: 20px;
+    }
+
+    button {
+        height: 50px;
+        font-size: 18px;
+    }
+}
+
+.toggle-btn {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.toggle-btn.light {
+    background: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+}
+.history-container {
+    display: none;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    /* margin: 20px auto;
+     */
+    display: flex;
+    width: 100%;
+    margin: 20PX;
+    margin-top:0px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.history-container h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.history-list {
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+.history-list p {
+    background: #f1f1f1;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+}
+.history-btn{
+    width: 100%;
+    background-color: #ff9500;
+}
+.history-list p:hover {
+    background: #ddd;
+}
+#clear-history-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#clear-history-btn:hover {
+    background: #c82333;
+}
+
+.history-btn{
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background 0.3s, color 0.3s;
+
+}
+
+#history-btn{
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+    grid-column: span 2;
+}
+#history-btn:hover {
+     
+    background: #0056b3;
+}
